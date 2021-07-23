@@ -4,7 +4,7 @@ if (window.location.pathname === '/notes') {
   saveNoteBtn = document.querySelector('.save-note');
   newNoteBtn = document.querySelector('.new-note');
   noteList = document.querySelectorAll('.list-container .list-group');
- }
+ };
 
 // Show an element
 const show = (elem) => {
@@ -20,7 +20,7 @@ const hide = (elem) => {
 let activeNote = {};
 let noteID = 1;
 
-const getNotes = () => { 
+const getNotes = () =>  
   fetch('/api/notes', {
     method: 'GET',
     headers: {
@@ -29,9 +29,9 @@ const getNotes = () => {
     },
   
   });
-}
 
-const saveNote = (note) => {
+
+const saveNote = (note) => 
   fetch('/api/notes', {
     method: 'POST',
     headers: {
@@ -39,15 +39,15 @@ const saveNote = (note) => {
     },
     body: JSON.stringify(note),
   });
-}
-const deleteNote = (id) => {
+
+const deleteNote = (id) => 
   fetch(`/api/notes/${id}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
     },
   });
-}
+
 const renderActiveNote = () => {
   hide(saveNoteBtn);
 
