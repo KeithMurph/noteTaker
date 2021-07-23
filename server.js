@@ -13,6 +13,31 @@ const readFileAsync = util.promisify(fs.readFile);
 const writeFileAsync = util.promisify(fs.writeFile);
 
 
+
+
+    // html
+    app.get("/notes", function(req, res) {
+        res.sendFile(path.join(__dirname, "./Develop/public/notes.html"));
+
+    });
+
+    app.get("/", function(req, res) {
+        res.sendFile(path.join(__dirname, "./Develop/public/index.html"));
+    });
+
+    app.get("*", function(req, res) {
+        res.sendFile(path.join(__dirname, "./Develop/public/index.html"));
+        
+    });
+
+    // listen
+
+    app.listen(PORT, function() {
+        console.log("listening on port" + PORT);
+        
+    });
+
+    
 app.use(express.urlencoded({ extended : true}));
 app.use(express.json());
 
@@ -58,30 +83,6 @@ app.delete("/api/notes/:id", function(req, res) {
 
         })
     })
-
-
-
-    // html
-    app.get("/notes", function(req, res) {
-        res.sendFile(path.join(__dirname, "./Develop/public/notes.html"));
-
-    });
-
-    app.get("/", function(req, res) {
-        res.sendFile(path.join(__dirname, "./Develop/public/index.html"));
-    });
-
-    app.get("*", function(req, res) {
-        res.sendFile(path.join(__dirname, "./Develop/public/index.html"));
-        
-    });
-
-    // listen
-
-    app.listen(PORT, function() {
-        console.log("listening on port" + PORT);
-        
-    });
 
 
 
