@@ -38,6 +38,7 @@ const saveNote = (note) =>
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(note),
+    
   });
 
 const deleteNote = (id) => 
@@ -72,6 +73,7 @@ const handleNoteSave = () => {
   saveNote(newNote).then(() => {
     getAndRenderNotes();
     renderActiveNote();
+    location.reload();
   });
 };
 
