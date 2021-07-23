@@ -6,7 +6,7 @@ const util = require("util");
 const app = express();
 const PORT = process.env.PORT || 4000;
 
-note.id = [];
+
 
 
 const readFileAsync = util.promisify(fs.readFile);
