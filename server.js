@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 4000;
 
 
 const readFileAsync = util.promisify(fs.readFile);
-const writeFileAsync = util.promisify(fs.readFile);
+const writeFileAsync = util.promisify(fs.writeFile);
 
 
 app.use(express.urlencoded({ extended : true}));
