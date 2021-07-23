@@ -28,7 +28,7 @@ app.post("/api/notes", function(req, res) {
     const note = req.body;
     readFileAsync("./Develop/db/db.json", "utf8").then(function(data) {
         const notes = [].concat(JSON.parse(data));
-        note.id = notes.length +1
+        note.id = notes.length + 1
         notes.push(note);
         return notes
        
@@ -52,7 +52,7 @@ app.delete("/api/notes/:id", function(req, res) {
            
         }).then(function(notes) {
             writeFileAsync("./Develop/db/db.json", JSON.stringify(notes))
-            res.send("saved")
+            res.send("saved");
 
         })
     })
