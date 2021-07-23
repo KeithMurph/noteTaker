@@ -4,7 +4,7 @@ const fs = require("fs");
 const util = require("util");
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 4000;
 
 
 const readFileAsync = util.promisify(fs.readFile);
@@ -80,7 +80,7 @@ app.delete("/api/notes/:id", function(req, res) {
         console.log("listening on port" + PORT);
         
     });
-    
+
 
 
 
