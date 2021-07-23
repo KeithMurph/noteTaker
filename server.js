@@ -1,14 +1,14 @@
 const express = require("express");
 const path = require("path");
 const fs = require("fs");
-const util = require("util");
+// const util = require("util");
 
 const app = express();
 const PORT = process.env.PORT || 4000;
 
 
-const readFileAsync = util.promisify(fs.readFile);
-const writeFileAsync = util.promisify(fs.writeFile);
+// const readFileAsync = util.promisify(fs.readFile);
+// const writeFileAsync = util.promisify(fs.writeFile);
 
 
 app.use(express.urlencoded({ extended : true}));
