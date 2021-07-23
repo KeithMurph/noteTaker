@@ -3,7 +3,7 @@ const path = require("path");
 const fs = require("fs");
 const util = require("util");
 
-const notes = require('express').express();
+const notes = require('express')
 const PORT = process.env.PORT || 4000;
 
 
@@ -81,6 +81,6 @@ notes.delete("/api/notes/:id", function(req, res) {
         console.log("listening on port" + PORT);
         
     });
-express();
+// express();
     
 
